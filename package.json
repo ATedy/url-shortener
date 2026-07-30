@@ -1,10 +1,15 @@
 {
   "name": "url-shortener",
   "version": "1.0.0",
-  "description": "A production-shaped URL shortener built as a DevOps learning project. You get a Node/Express API with PostgreSQL persistence and Redis caching, containerised with Docker, runnable on Kubernetes, and shipped through GitHub Actions to AWS ECR with Terraform-managed infrastructure and CloudWatch logging.",
+  "description": "A production-shaped URL shortener built as a DevOps learning project",
   "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -18,7 +23,7 @@
   },
   "homepage": "https://github.com/ATedy/url-shortener#readme",
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.9",
+    "@tsconfig/node22": "^22.0.5",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.2",
     "express": "^5.2.1",
