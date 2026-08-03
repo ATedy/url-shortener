@@ -1,1 +1,6 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const config = {
+    port: process.env.PORT || 3000,
+    nodeEnv: process.env.NODE_ENV || 'development',
+} as const
+
+export default config
